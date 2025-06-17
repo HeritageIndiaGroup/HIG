@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 const companies = [
   {
     id: 1,
-    name: "Heritage India Agro Producer Company Limited",
+    name: "HIG - HERITAGE INDIA AGRO PRODUCER COMPANY LIMITED",
     description: "Agricultural production and farming solutions for sustainable growth",
     icon: Building2,
     website: "https://heritage-agro.com",
@@ -14,7 +14,7 @@ const companies = [
   },
   {
     id: 2,
-    name: "Heritage India Micro Services Foundation",
+    name: "HIG - HERITAGE INDIA MICRO SERVICES FOUNDATION",
     description: "Micro services and community development initiatives",
     icon: Users,
     website: "https://heritage-microservices.com",
@@ -22,7 +22,7 @@ const companies = [
   },
   {
     id: 3,
-    name: "Heritage Media and Education Private Limited",
+    name: "HIG – HERITAGE MEDIA AND EDUCATION PRIVATE LIMITED",
     description: "Educational services and media solutions",
     icon: GraduationCap,
     website: "https://heritage-media-education.com",
@@ -30,7 +30,7 @@ const companies = [
   },
   {
     id: 4,
-    name: "Heritage India Hotel & Resort Private Limited",
+    name: "HIG - HERITAGE INDIA HOTEL & RESORT PRIVATE LIMITED",
     description: "Hospitality services and luxury resort experiences",
     icon: Hotel,
     website: "https://heritage-hotels.com",
@@ -38,7 +38,7 @@ const companies = [
   },
   {
     id: 5,
-    name: "Heritage India Infra Venture Private Limited",
+    name: "HIG - HERITAGE INDIA INFRA VENTURE PRIVATE LIMITED",
     description: "Infrastructure development and construction ventures",
     icon: Hammer,
     website: "https://heritage-infra.com",
@@ -46,7 +46,7 @@ const companies = [
   },
   {
     id: 6,
-    name: "Heritage India Film Production Private Limited",
+    name: "HIG - HERITAGE INDIA FILM PRODUCTION PRIVATE LIMITED",
     description: "Film production and entertainment industry services",
     icon: Film,
     website: "https://heritage-films.com",
@@ -54,7 +54,7 @@ const companies = [
   },
   {
     id: 7,
-    name: "KashiKendarnath",
+    name: "HIG - KashiKendarnath",
     description: "Specialized services and spiritual tourism solutions",
     icon: Home,
     website: "https://kashikendarnath.com",
@@ -62,7 +62,7 @@ const companies = [
   },
   {
     id: 8,
-    name: "Heritage Finance",
+    name: "HIG - Finance",
     description: "Financial services and investment solutions",
     icon: CreditCard,
     website: "https://heritage-finance.com",
@@ -70,7 +70,7 @@ const companies = [
   },
   {
     id: 9,
-    name: "Heritage Mart",
+    name: "HIG - Mart",
     description: "Retail and consumer goods marketplace",
     icon: ShoppingCart,
     website: "https://heritage-mart.com",
@@ -78,7 +78,7 @@ const companies = [
   },
   {
     id: 10,
-    name: "Dasandas Traders",
+    name: "HIG - Dasandas Traders",
     description: "Trading and distribution services",
     icon: Truck,
     website: "https://dasandas-traders.com",
@@ -86,7 +86,7 @@ const companies = [
   },
   {
     id: 11,
-    name: "Glam Factory",
+    name: "HIG - Glam Factory",
     description: "Beauty and lifestyle products and services",
     icon: Sparkles,
     website: "https://glamfactory.com",
