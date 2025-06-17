@@ -40,9 +40,27 @@ const InquiryForm = () => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     
+    // Send to WhatsApp
+    const whatsappNumber = "+919876543210"; // Replace with actual WhatsApp number
+    const message = `New Inquiry from Heritage India Group Website:
+    
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+Company Interest: ${formData.company || 'General Inquiry'}
+Subject: ${formData.subject}
+Message: ${formData.message}
+Preferred Contact: ${formData.contactMethod}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    
+    // Open WhatsApp
+    window.open(whatsappUrl, '_blank');
+    
     toast({
       title: "Inquiry Submitted Successfully!",
-      description: "We'll get back to you within 24 hours.",
+      description: "Your inquiry has been sent via WhatsApp. We'll get back to you within 24 hours.",
     });
 
     // Reset form
@@ -78,7 +96,7 @@ const InquiryForm = () => {
             <CardHeader className="bg-gradient-to-r from-blue-900 to-blue-700 text-white rounded-t-lg">
               <CardTitle className="text-2xl font-bold">Send us an Inquiry</CardTitle>
               <CardDescription className="text-blue-100">
-                Fill out the form below and we'll respond promptly to your inquiry.
+                Fill out the form below and your inquiry will be sent via WhatsApp for quick response.
               </CardDescription>
             </CardHeader>
             <CardContent className="p-8">
@@ -200,7 +218,7 @@ const InquiryForm = () => {
                   type="submit" 
                   className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 text-lg transition-all duration-300 transform hover:scale-105"
                 >
-                  Send Inquiry
+                  Send via WhatsApp
                   <Send className="ml-2 h-5 w-5" />
                 </Button>
               </form>
