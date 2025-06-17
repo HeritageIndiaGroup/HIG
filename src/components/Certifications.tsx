@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { FileText, Award, Shield, CheckCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { FileText, Download, Award, Shield, CheckCircle } from 'lucide-react';
 
 const certifications = [
   {
@@ -8,6 +9,7 @@ const certifications = [
     title: "ISO 9001:2015 Certification",
     description: "Quality Management System certification for consistent quality delivery",
     icon: Award,
+    document: "ISO_9001_2015_Certificate.pdf",
     category: "Quality Management"
   },
   {
@@ -15,6 +17,7 @@ const certifications = [
     title: "GST Registration Certificate",
     description: "Goods and Services Tax registration for all business operations",
     icon: FileText,
+    document: "GST_Registration_Certificate.pdf",
     category: "Tax Registration"
   },
   {
@@ -22,6 +25,7 @@ const certifications = [
     title: "Company Incorporation Certificate",
     description: "Certificate of Incorporation under Companies Act",
     icon: Shield,
+    document: "Company_Incorporation_Certificate.pdf",
     category: "Legal Registration"
   },
   {
@@ -29,6 +33,7 @@ const certifications = [
     title: "MSME Registration",
     description: "Micro, Small and Medium Enterprises registration certificate",
     icon: CheckCircle,
+    document: "MSME_Registration_Certificate.pdf",
     category: "Government Registration"
   },
   {
@@ -36,6 +41,7 @@ const certifications = [
     title: "Trade License",
     description: "Municipal trade license for business operations",
     icon: FileText,
+    document: "Trade_License_Certificate.pdf",
     category: "Municipal License"
   },
   {
@@ -43,11 +49,18 @@ const certifications = [
     title: "PAN Card",
     description: "Permanent Account Number for tax identification",
     icon: Shield,
+    document: "PAN_Card_Certificate.pdf",
     category: "Tax Registration"
   }
 ];
 
 const Certifications = () => {
+  const handleDownload = (documentName: string) => {
+    // This would typically link to actual document files
+    console.log(`Downloading: ${documentName}`);
+    alert(`Document download would start: ${documentName}`);
+  };
+
   return (
     <section id="certifications" className="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-6">
@@ -76,9 +89,17 @@ const Certifications = () => {
                   </div>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <CardDescription className="text-gray-600 leading-relaxed">
+                  <CardDescription className="text-gray-600 mb-4 leading-relaxed">
                     {cert.description}
                   </CardDescription>
+                  <Button 
+                    variant="outline" 
+                    className="w-full group-hover:bg-blue-900 group-hover:text-white transition-all duration-300"
+                    onClick={() => handleDownload(cert.document)}
+                  >
+                    Download Certificate
+                    <Download className="ml-2 h-4 w-4" />
+                  </Button>
                 </CardContent>
               </Card>
             );
