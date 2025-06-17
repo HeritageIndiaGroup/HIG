@@ -1,104 +1,96 @@
 
-import { ExternalLink, Building2, Factory, Truck, Heart, Home, Zap, Leaf, ShoppingBag, GraduationCap, Plane, Utensils, Shield } from 'lucide-react';
+import { ExternalLink, Building2, Users, GraduationCap, Hotel, Hammer, Film, Home, CreditCard, ShoppingCart, Truck, Sparkles } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 const companies = [
   {
     id: 1,
-    name: "Heritage Construction",
-    description: "Leading construction and infrastructure development company",
+    name: "Heritage India Agro Producer Company Limited",
+    description: "Agricultural production and farming solutions for sustainable growth",
     icon: Building2,
-    website: "https://heritage-construction.com",
-    category: "Construction"
-  },
-  {
-    id: 2,
-    name: "Heritage Manufacturing",
-    description: "Advanced manufacturing solutions and industrial equipment",
-    icon: Factory,
-    website: "https://heritage-manufacturing.com",
-    category: "Manufacturing"
-  },
-  {
-    id: 3,
-    name: "Heritage Logistics",
-    description: "Comprehensive logistics and supply chain management",
-    icon: Truck,
-    website: "https://heritage-logistics.com",
-    category: "Logistics"
-  },
-  {
-    id: 4,
-    name: "Heritage Healthcare",
-    description: "Quality healthcare services and medical facilities",
-    icon: Heart,
-    website: "https://heritage-healthcare.com",
-    category: "Healthcare"
-  },
-  {
-    id: 5,
-    name: "Heritage Real Estate",
-    description: "Premium residential and commercial real estate",
-    icon: Home,
-    website: "https://heritage-realestate.com",
-    category: "Real Estate"
-  },
-  {
-    id: 6,
-    name: "Heritage Energy",
-    description: "Renewable energy solutions and power generation",
-    icon: Zap,
-    website: "https://heritage-energy.com",
-    category: "Energy"
-  },
-  {
-    id: 7,
-    name: "Heritage Agriculture",
-    description: "Sustainable farming and agricultural technologies",
-    icon: Leaf,
-    website: "https://heritage-agriculture.com",
+    website: "https://heritage-agro.com",
     category: "Agriculture"
   },
   {
+    id: 2,
+    name: "Heritage India Micro Services Foundation",
+    description: "Micro services and community development initiatives",
+    icon: Users,
+    website: "https://heritage-microservices.com",
+    category: "Services"
+  },
+  {
+    id: 3,
+    name: "Heritage Media and Education Private Limited",
+    description: "Educational services and media solutions",
+    icon: GraduationCap,
+    website: "https://heritage-media-education.com",
+    category: "Education & Media"
+  },
+  {
+    id: 4,
+    name: "Heritage India Hotel & Resort Private Limited",
+    description: "Hospitality services and luxury resort experiences",
+    icon: Hotel,
+    website: "https://heritage-hotels.com",
+    category: "Hospitality"
+  },
+  {
+    id: 5,
+    name: "Heritage India Infra Venture Private Limited",
+    description: "Infrastructure development and construction ventures",
+    icon: Hammer,
+    website: "https://heritage-infra.com",
+    category: "Infrastructure"
+  },
+  {
+    id: 6,
+    name: "Heritage India Film Production Private Limited",
+    description: "Film production and entertainment industry services",
+    icon: Film,
+    website: "https://heritage-films.com",
+    category: "Entertainment"
+  },
+  {
+    id: 7,
+    name: "KashiKendarnath",
+    description: "Specialized services and spiritual tourism solutions",
+    icon: Home,
+    website: "https://kashikendarnath.com",
+    category: "Tourism"
+  },
+  {
     id: 8,
-    name: "Heritage Retail",
-    description: "Modern retail chains and e-commerce platforms",
-    icon: ShoppingBag,
-    website: "https://heritage-retail.com",
-    category: "Retail"
+    name: "Heritage Finance",
+    description: "Financial services and investment solutions",
+    icon: CreditCard,
+    website: "https://heritage-finance.com",
+    category: "Finance"
   },
   {
     id: 9,
-    name: "Heritage Education",
-    description: "Educational institutions and learning solutions",
-    icon: GraduationCap,
-    website: "https://heritage-education.com",
-    category: "Education"
+    name: "Heritage Mart",
+    description: "Retail and consumer goods marketplace",
+    icon: ShoppingCart,
+    website: "https://heritage-mart.com",
+    category: "Retail"
   },
   {
     id: 10,
-    name: "Heritage Travel",
-    description: "Travel and tourism services across India",
-    icon: Plane,
-    website: "https://heritage-travel.com",
-    category: "Travel"
+    name: "Dasandas Traders",
+    description: "Trading and distribution services",
+    icon: Truck,
+    website: "https://dasandas-traders.com",
+    category: "Trading"
   },
   {
     id: 11,
-    name: "Heritage Foods",
-    description: "Food processing and restaurant chain operations",
-    icon: Utensils,
-    website: "https://heritage-foods.com",
-    category: "Food & Beverage"
-  },
-  {
-    id: 12,
-    name: "Heritage Security",
-    description: "Comprehensive security services and solutions",
-    icon: Shield,
-    website: "https://heritage-security.com",
-    category: "Security"
+    name: "Glam Factory",
+    description: "Beauty and lifestyle products and services",
+    icon: Sparkles,
+    website: "https://glamfactory.com",
+    category: "Beauty & Lifestyle"
   }
 ];
 
@@ -109,8 +101,8 @@ const CompaniesShowcase = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-blue-900 mb-4">Our Companies</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover our diverse portfolio of companies, each excelling in their respective industries 
-            and contributing to India's growth story.
+            Discover our diverse portfolio of companies under Heritage India Group, 
+            each excelling in their respective industries and contributing to India's growth story.
           </p>
         </div>
 

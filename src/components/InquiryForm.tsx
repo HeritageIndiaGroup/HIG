@@ -11,9 +11,17 @@ import { useToast } from '@/hooks/use-toast';
 import { Send, MessageSquare } from 'lucide-react';
 
 const companies = [
-  "Heritage Construction", "Heritage Manufacturing", "Heritage Logistics", "Heritage Healthcare",
-  "Heritage Real Estate", "Heritage Energy", "Heritage Agriculture", "Heritage Retail",
-  "Heritage Education", "Heritage Travel", "Heritage Foods", "Heritage Security"
+  "Heritage India Agro Producer Company Limited",
+  "Heritage India Micro Services Foundation", 
+  "Heritage Media and Education Private Limited",
+  "Heritage India Hotel & Resort Private Limited",
+  "Heritage India Infra Venture Private Limited",
+  "Heritage India Film Production Private Limited",
+  "KashiKendarnath",
+  "Heritage Finance",
+  "Heritage Mart",
+  "Dasandas Traders",
+  "Glam Factory"
 ];
 
 const InquiryForm = () => {
