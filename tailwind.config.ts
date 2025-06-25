@@ -89,11 +89,18 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				// ✅ ADD THIS:
+        fadeSlide: {
+          "0%": { opacity: "0", transform: "translateY(-20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				// ✅ ADD THIS:
+        'fade-slide': "fadeSlide 0.4s ease-out",
 			}
 		}
 	},

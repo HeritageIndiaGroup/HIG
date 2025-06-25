@@ -239,7 +239,7 @@ const CompaniesShowcase = () => {
   }, []);
 
   return (
-    <section id="companies" className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+<section id="companies" className="py-20 bg-gradient-to-br from-[#eef4fa] to-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-5xl font-extrabold mb-5 text-gray-900 leading-tight">

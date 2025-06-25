@@ -257,31 +257,31 @@ const heroImages = [
 ];
 
 const taglines = [
-  'HIG Agro Producer: Cultivating prosperity, empowering farmers.',
-  'HIG Micro Services: Building resilient communities, fostering social change.',
-  'HIG Media & Education: Shaping minds, crafting stories.',
-  'HIG Hotel & Resort: Redefining luxury, creating memorable stays.',
-  'HIG Infra Venture: Constructing the future, one foundation at a time.',
-  'HIG Glam Factory: Innovating beauty, crafting excellence.',
-  'KashiKedarnath: Enriching spiritual journeys, promoting cultural heritage.',
-  'HIG Finance: Empowering financial growth, securing your future.',
-  'HIG Mart: Your daily essentials, delivered with ease.',
-  'HIG Dasandas Traders: Global trade, local impact.',
-  'HIG Media & Education: Shaping minds, crafting stories. (Additional Media)',
+  'HIG Agro Producer:',
+  'HIG Micro Services:',
+  'HIG Media & Education:',
+  'HIG Hotel & Resort:',
+  'HIG Infra Venture:',
+  'HIG Glam Factory:',
+  'KashiKedarnath:',
+  'HIG Finance:',
+  'HIG Mart:',
+  'HIG Dasandas Traders: ',
+  'HIG Media & Education:',
 ];
 
 const descriptions = [
-  'Dedicated to sustainable agriculture, we empower farmers with modern techniques and market access, contributing to India\'s food security and rural development.',
-  'Through grassroots initiatives and support programs, we strive to uplift underprivileged communities, focusing on health, education, and livelihood generation.',
-  'We are committed to innovative education and impactful media production, fostering knowledge and entertainment that inspires and informs across diverse platforms.',
-  'Offering unparalleled comfort and exquisite experiences, our hotels and resorts provide a sanctuary of luxury and hospitality for every traveler.',
-  'Pioneering critical infrastructure projects, we build robust foundations for India\'s progress, from urban development to essential public works.',
-  'At Glam Factory, we are dedicated to creating high-quality beauty and lifestyle products, blending innovation with tradition to meet contemporary demands.',
-  'We facilitate sacred pilgrimages and promote the vibrant cultural heritage of Kashi (Varanasi) and Kedarnath, offering spiritual journeys and tourism experiences.',
-  'Providing comprehensive financial solutions, we help individuals and businesses achieve their economic goals through trusted and accessible services.',
-  'A modern retail and e-commerce venture, HIG - Mart connects you to a wide range of quality products, making everyday shopping convenient and reliable.',
-  'Engaged in dynamic trading operations, Dasandas Traders ensures efficient supply chain management and delivers quality goods across various sectors.',
-  'We are committed to innovative education and impactful media production, fostering knowledge and entertainment that inspires and informs across diverse platforms. (Additional Media)',
+  'Cultivating prosperity, empowering farmers.',
+  ' Building resilient communities, fostering social change.',
+  'Shaping minds, crafting stories.',
+  'Redefining luxury, creating memorable stays.',
+  'Constructing the future, one foundation at a time.',
+  'Innovating beauty, crafting excellence.',
+  'Enriching spiritual journeys, promoting cultural heritage.',
+  'Empowering financial growth, securing your future.',
+  'Your daily essentials, delivered with ease.',
+  'Global trade, local impact.',
+  'Shaping minds, crafting stories. (Additional Media)',
 ];
 
 const Hero = () => {
@@ -300,7 +300,7 @@ const Hero = () => {
       <Swiper
         modules={[Autoplay, EffectFade]}
         effect="fade"
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        autoplay={{ delay: 6000, disableOnInteraction: false }}
         loop={true}
         className="absolute inset-0 w-full h-full z-0"
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
@@ -366,7 +366,7 @@ const Hero = () => {
               cursorStyle="_"
               typeSpeed={30}
               deleteSpeed={20}
-              delaySpeed={2000}
+              delaySpeed={3000}
             />
           </motion.p>
 
