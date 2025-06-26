@@ -317,13 +317,13 @@ import vinayakPlaza from '@/assets/Vinayak_Plaza.jpg';
 const AboutUs = () => {
   const values = [
     {
-      name: "Amit Sharma",
+      name: "Mr. Dasan Das Gupta",
       role: "Chairman & Founder",
       image: "https://randomuser.me/api/portraits/men/32.jpg",
       quote: `"Building a better India begins with trust, vision, and relentless commitment."`
     },
     {
-      name: "Priya Mehta",
+      name: "Ms. Saroj Gupta",
       role: "Co-Founder & Director",
       image: "https://randomuser.me/api/portraits/women/44.jpg",
       quote: `"Empowering communities and driving innovation is at the heart of everything we do."`
@@ -355,18 +355,17 @@ const AboutUs = () => {
             <h3 className="text-3xl font-bold text-blue-900">Our Story</h3>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                Founded in 1998, Heritage India Group began as a single construction company with a vision 
-                to contribute to India's infrastructure development. Over the years, we have grown into a 
-                diversified conglomerate with 12 companies spanning multiple industries.
+                At the heart of the Heritage India Group (HIG) lies a vision sculpted by its esteemed founder, Mr. Dasan Das Gupta. His pioneering spirit, unwavering commitment to nation-building, and profound belief in empowering communities have been the guiding light for every endeavor under the HIG umbrella. From a single idea, he has fostered a diverse ecosystem dedicated to transforming aspirations into tangible realities across various sectors, building a legacy rooted in progress and heritage.
               </p>
               <p>
-                Our journey reflects India's own growth story - from traditional industries to modern 
-                technology-driven sectors. Today, we employ over 10,000 people across the country and 
-                continue to expand our footprint in emerging markets.
+                This enduring legacy is exemplified in the very growth and diversification of HIG, much like a magnificent tree whose strong roots nourish a sprawling network of branches, each reaching towards new horizons. We have three main pillars that represent the core of our multifaceted operations.
               </p>
               <p>
-                What sets us apart is our commitment to combining traditional Indian values with modern 
-                business practices, creating sustainable value for all our stakeholders.
+                Empowering Communities: We uplift rural Uttar Pradesh by fostering economic independence through grassroots development, financial inclusion, and agricultural innovation with HIG - Heritage India Agro Producer Company Limited and HIG - Heritage India Micro Services Foundation.
+
+Building for the Future: We drive growth and connectivity via infrastructure (HIG - Heritage India Infra Venture Private Limited), finance (HIG - Finance), and trade (HIG - Dasandas Traders), propelling national development.
+
+Celebrating Culture & Progress: We honor India's heritage while embracing modernity through media and education (HIG – Heritage Media and Education Private Limited, HIG - Heritage India Film Production Private Limited), and diverse experiences from spiritual journeys to retail (HIG - Heritage India Hotel & Resort Private Limited, Kashi Kedarnath, HIG - Mart, HIG - Glam Factory).
               </p>
             </div>
           </div>

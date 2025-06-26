@@ -1,5 +1,5 @@
-// import { useEffect, useState, useRef } from 'react'; // Import useRef
-// import { Briefcase, MapPin, Clock, Send, FileText, UploadCloud, XCircle } from 'lucide-react'; // Added UploadCloud, XCircle
+// import { useEffect, useState, useRef } from 'react';
+// import { Briefcase, MapPin, Send, FileText, UploadCloud, XCircle } from 'lucide-react';
 // import AOS from 'aos';
 // import 'aos/dist/aos.css';
 // import { Input } from '@/components/ui/input';
@@ -49,10 +49,11 @@
 //     name: '',
 //     phone: '',
 //     position: '',
-//     resumeName: '', // Stores the name of the selected file
+//     resumeName: '',
 //   });
 
-//   const fileInputRef = useRef(null); // Ref for the file input
+//   const fileInputRef = useRef(null);
+//   const formSectionRef = useRef(null);
 
 //   const handleChange = (field, value) => {
 //     setFormData(prev => ({ ...prev, [field]: value }));
@@ -63,14 +64,24 @@
 //     if (file) {
 //       handleChange('resumeName', file.name);
 //     } else {
-//       handleChange('resumeName', ''); // Clear if no file selected
+//       handleChange('resumeName', '');
 //     }
 //   };
 
 //   const handleRemoveFile = () => {
 //     handleChange('resumeName', '');
 //     if (fileInputRef.current) {
-//       fileInputRef.current.value = ''; // Clear the file input element
+//       fileInputRef.current.value = '';
+//     }
+//   };
+
+//   const handleApplyNow = (jobTitle) => {
+//     setFormData(prev => ({
+//       ...prev,
+//       position: jobTitle,
+//     }));
+//     if (formSectionRef.current) {
+//       formSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
 //     }
 //   };
 
@@ -80,19 +91,17 @@
 //     const { name, phone, position, resumeName } = formData;
 
 //     const message = `New Career Application:
-    
 // Name: ${name}
 // Phone: ${phone}
 // Position Applied For: ${position}
 // Resume: ${resumeName ? resumeName : 'Not attached. Will send separately.'}`;
 
-//     const whatsappNumber = '+917081957371'; // Your WhatsApp number
+//     const whatsappNumber = '+917081957371';
 //     const encodedMessage = encodeURIComponent(message);
 //     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
 //     window.open(whatsappUrl, '_blank');
 
-//     // Reset form data and file input after submission
 //     setFormData({
 //       name: '',
 //       phone: '',
@@ -106,7 +115,7 @@
 
 //   return (
 //     <div className="bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800 py-16 px-4 md:px-16 lg:px-24">
-//       {/* Header */}
+//       {/* Hero Section */}
 //       <section className="text-center mb-16" data-aos="fade-up">
 //         <h1 className="text-5xl font-extrabold mb-4 text-blue-900 leading-tight">
 //           Shape Your Future With Us
@@ -117,7 +126,7 @@
 //         </p>
 //       </section>
 
-//       {/* Jobs Section */}
+//       {/* Job Cards */}
 //       <section className="mb-20">
 //         <h2 className="text-3xl font-bold text-center mb-10 text-blue-800" data-aos="fade-up">
 //           Current Job Openings
@@ -143,23 +152,35 @@
 //                   {job.location}
 //                 </CardDescription>
 //               </CardHeader>
-//               <CardContent className="p-0">
-//                 <p className="text-base text-gray-700 leading-relaxed">
+//               <CardContent className="p-0 flex-grow">
+//                 <p className="text-base text-gray-700 leading-relaxed mb-4">
 //                   {job.description}
 //                 </p>
 //               </CardContent>
+//               <div className="mt-auto">
+//                 <Button
+//                   onClick={() => handleApplyNow(job.title)}
+//                   style={{ backgroundColor: '#005BA1', color: 'white' }}
+//                   className="w-full font-semibold py-2 rounded-lg flex items-center justify-center gap-2 transition-colors hover:brightness-110"
+//                 >
+//                   Apply Now <Send className="w-4 h-4" />
+//                 </Button>
+//               </div>
 //             </Card>
 //           ))}
 //         </div>
 //       </section>
 
-//       {/* Apply Form Section */}
-//       <section className="max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+//       {/* Apply Form */}
+//       <section ref={formSectionRef} className="max-w-3xl mx-auto mt-12" data-aos="fade-up" data-aos-delay="200">
 //         <Card className="shadow-2xl border border-blue-300 rounded-xl overflow-hidden bg-white">
-//           <CardHeader className="bg-blue-800 text-white p-6">
+//           <CardHeader className="bg-blue-800 text-white p-6 flex flex-col items-center text-center">
 //             <CardTitle className="text-3xl font-bold mb-2">Apply Now</CardTitle>
-//             <CardDescription className="text-blue-100 text-lg">
-//               Fill out the form below to send your application directly via WhatsApp.
+//             <CardDescription
+//               className="text-xl font-semibold"
+//               style={{ color: '#005BA1' }}
+//             >
+//               Send Your Application
 //             </CardDescription>
 //           </CardHeader>
 //           <CardContent className="p-8 space-y-7">
@@ -190,7 +211,7 @@
 //                     value={formData.phone}
 //                     onChange={e => handleChange('phone', e.target.value)}
 //                     className="p-3 text-base border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-md"
-//                     placeholder="+91 XXXXXXXXXX"
+//                     placeholder="+917081957371"
 //                   />
 //                 </div>
 
@@ -208,7 +229,6 @@
 //                   />
 //                 </div>
 
-//                 {/* --- Improved Resume Upload Section --- */}
 //                 <div>
 //                   <Label htmlFor="resume" className="text-lg font-medium mb-2 block">
 //                     Resume/CV (Optional)
@@ -219,11 +239,10 @@
 //                       type="file"
 //                       accept=".pdf,.doc,.docx"
 //                       onChange={handleFileChange}
-//                       ref={fileInputRef} // Attach ref
+//                       ref={fileInputRef}
 //                       className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
 //                     />
 //                     {formData.resumeName ? (
-//                       // Display selected file with a remove button
 //                       <div className="flex items-center justify-center gap-3 text-blue-700">
 //                         <FileText className="w-6 h-6" />
 //                         <span className="font-medium truncate max-w-[calc(100%-6rem)]">
@@ -241,7 +260,6 @@
 //                         </Button>
 //                       </div>
 //                     ) : (
-//                       // Display upload prompt
 //                       <div className="flex flex-col items-center justify-center text-gray-500 group-hover:text-blue-600">
 //                         <UploadCloud className="w-10 h-10 mb-2" />
 //                         <p className="font-semibold text-lg">Drag & Drop or Click to Upload</p>
@@ -254,11 +272,11 @@
 //                     Kindly note: Your resume is selected but not directly uploaded here. You'll send it via WhatsApp manually after submitting this form.
 //                   </p>
 //                 </div>
-//                 {/* --- End Improved Resume Upload Section --- */}
 
 //                 <Button
 //                   type="submit"
-//                   className="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold text-xl py-3 rounded-lg flex items-center justify-center gap-3 transition-colors duration-300 ease-in-out shadow-md hover:shadow-lg"
+//                   style={{ backgroundColor: '#005BA1', color: '#fff' }}
+//                   className="w-full font-semibold py-3 rounded-lg flex items-center justify-center gap-3 transition-colors hover:brightness-110 shadow-md"
 //                 >
 //                   Send Application via WhatsApp
 //                   <Send className="w-6 h-6" />
@@ -272,17 +290,12 @@
 //   );
 // }
 
-
-
-
-import { useEffect, useState, useRef } from 'react';
-import { Briefcase, MapPin, Send, FileText, UploadCloud, XCircle } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { Briefcase, MapPin, Send } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const jobOpenings = [
   {
@@ -322,73 +335,17 @@ export default function Career() {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    position: '',
-    resumeName: '',
-  });
-
-  const fileInputRef = useRef(null);
   const formSectionRef = useRef(null);
-
-  const handleChange = (field, value) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
-  const handleFileChange = (e) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      handleChange('resumeName', file.name);
-    } else {
-      handleChange('resumeName', '');
-    }
-  };
-
-  const handleRemoveFile = () => {
-    handleChange('resumeName', '');
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-    }
-  };
+  const [selectedJob, setSelectedJob] = useState('');
 
   const handleApplyNow = (jobTitle) => {
-    setFormData(prev => ({
-      ...prev,
-      position: jobTitle,
-    }));
+    setSelectedJob(jobTitle);
     if (formSectionRef.current) {
       formSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const { name, phone, position, resumeName } = formData;
-
-    const message = `New Career Application:
-Name: ${name}
-Phone: ${phone}
-Position Applied For: ${position}
-Resume: ${resumeName ? resumeName : 'Not attached. Will send separately.'}`;
-
-    const whatsappNumber = '+917081957371';
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-    window.open(whatsappUrl, '_blank');
-
-    setFormData({
-      name: '',
-      phone: '',
-      position: '',
-      resumeName: '',
-    });
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-    }
-  };
+  const googleFormLink = 'https://docs.google.com/forms/d/e/1FAIpQLSfQ-xYIglEpzEJ9WKUgIaFLHBV2pOGZB80HEWDS-H8_pdqYnA/viewform?usp=header';
 
   return (
     <div className="bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800 py-16 px-4 md:px-16 lg:px-24">
@@ -437,7 +394,8 @@ Resume: ${resumeName ? resumeName : 'Not attached. Will send separately.'}`;
               <div className="mt-auto">
                 <Button
                   onClick={() => handleApplyNow(job.title)}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg flex items-center justify-center gap-2 transition-colors"
+                  style={{ backgroundColor: '#005BA1', color: 'white' }}
+                  className="w-full font-semibold py-2 rounded-lg flex items-center justify-center gap-2 transition-colors hover:brightness-110"
                 >
                   Apply Now <Send className="w-4 h-4" />
                 </Button>
@@ -447,114 +405,40 @@ Resume: ${resumeName ? resumeName : 'Not attached. Will send separately.'}`;
         </div>
       </section>
 
-      {/* Apply Form */}
-      <section ref={formSectionRef} className="max-w-3xl mx-auto mt-12" data-aos="fade-up" data-aos-delay="200">
+      {/* Apply Form Section */}
+      <section
+        ref={formSectionRef}
+        className="max-w-3xl mx-auto mt-12 text-center"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
         <Card className="shadow-2xl border border-blue-300 rounded-xl overflow-hidden bg-white">
-          <CardHeader className="bg-blue-800 text-white p-6">
+          <CardHeader className="bg-blue-800 text-white p-6 flex flex-col items-center text-center">
             <CardTitle className="text-3xl font-bold mb-2">Apply Now</CardTitle>
-            <CardDescription className="text-blue-200 text-xl font-semibold">
+            <CardDescription
+              className="text-xl font-semibold"
+              style={{ color: '#005BA1' }}
+            >
               Send Your Application
             </CardDescription>
           </CardHeader>
-          <CardContent className="p-8 space-y-7">
-            <form onSubmit={handleSubmit}>
-              <div className="space-y-6">
-                <div>
-                  <Label htmlFor="name" className="text-lg font-medium mb-2 block">
-                    Full Name <span className="text-red-500">*</span>
-                  </Label>
-                  <Input
-                    id="name"
-                    required
-                    value={formData.name}
-                    onChange={e => handleChange('name', e.target.value)}
-                    className="p-3 text-base border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-md"
-                    placeholder="Your full name"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="phone" className="text-lg font-medium mb-2 block">
-                    Phone Number <span className="text-red-500">*</span>
-                  </Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={e => handleChange('phone', e.target.value)}
-                    className="p-3 text-base border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-md"
-                    placeholder="+917081957371"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="position" className="text-lg font-medium mb-2 block">
-                    Applying For <span className="text-red-500">*</span>
-                  </Label>
-                  <Input
-                    id="position"
-                    required
-                    value={formData.position}
-                    onChange={e => handleChange('position', e.target.value)}
-                    className="p-3 text-base border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-md"
-                    placeholder="e.g., Frontend Developer"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="resume" className="text-lg font-medium mb-2 block">
-                    Resume/CV (Optional)
-                  </Label>
-                  <div className="relative border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-blue-500 transition-colors cursor-pointer group">
-                    <input
-                      id="resume"
-                      type="file"
-                      accept=".pdf,.doc,.docx"
-                      onChange={handleFileChange}
-                      ref={fileInputRef}
-                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                    />
-                    {formData.resumeName ? (
-                      <div className="flex items-center justify-center gap-3 text-blue-700">
-                        <FileText className="w-6 h-6" />
-                        <span className="font-medium truncate max-w-[calc(100%-6rem)]">
-                          {formData.resumeName}
-                        </span>
-                        <Button
-                          type="button"
-                          variant="ghost"
-                          size="icon"
-                          onClick={handleRemoveFile}
-                          className="text-red-500 hover:text-red-700 ml-2"
-                          aria-label="Remove selected resume"
-                        >
-                          <XCircle className="w-5 h-5" />
-                        </Button>
-                      </div>
-                    ) : (
-                      <div className="flex flex-col items-center justify-center text-gray-500 group-hover:text-blue-600">
-                        <UploadCloud className="w-10 h-10 mb-2" />
-                        <p className="font-semibold text-lg">Drag & Drop or Click to Upload</p>
-                        <p className="text-sm">Supported formats: PDF, DOC, DOCX (Max 5MB)</p>
-                      </div>
-                    )}
-                  </div>
-                  <p className="text-sm text-gray-500 mt-2 flex items-center gap-1">
-                    <FileText className="w-4 h-4" />
-                    Kindly note: Your resume is selected but not directly uploaded here. You'll send it via WhatsApp manually after submitting this form.
-                  </p>
-                </div>
-
-                <Button
-                  type="submit"
-                  className="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold text-xl py-3 rounded-lg flex items-center justify-center gap-3 transition duration-300 shadow-md hover:shadow-lg"
-                >
-                  Send Application via WhatsApp
-                  <Send className="w-6 h-6" />
-                </Button>
-              </div>
-            </form>
+          <CardContent className="p-8 space-y-6">
+            <p className="text-lg text-gray-700">
+              You’ll be redirected to a secure Google Form to submit your application and upload your resume.
+            </p>
+            <a
+              href={googleFormLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                style={{ backgroundColor: '#005BA1', color: '#fff' }}
+                className="w-full font-semibold py-3 rounded-lg flex items-center justify-center gap-3 transition-colors hover:brightness-110 shadow-md"
+              >
+                Apply Here
+                <Send className="w-6 h-6" />
+              </Button>
+            </a>
           </CardContent>
         </Card>
       </section>
