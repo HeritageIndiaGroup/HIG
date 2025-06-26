@@ -3,7 +3,8 @@ import logo from '@/assets/logo.png';
 
 const Banner = () => {
   return (
-    <div className="w-full px-6 py-8 font-body bg-white z-40 relative">
+    // <div className="w-full px-6 py-8 font-body bg-white z-40 relative">
+    <div className="w-full max-w-screen-xl mx-auto px-4 md:px-6 py-8 font-body bg-white z-40 relative overflow-x-hidden">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         <div className="flex items-center space-x-4">
           <a href="#home" className="w-24 h-24 block">
