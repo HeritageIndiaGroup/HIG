@@ -548,7 +548,7 @@ const Nav = () => {
 
       {/* Mobile Dropdown Menu */}
       {mobileOpen && isMobileScreen && (
-        <div className="md:hidden bg-black px-6 py-6 text-white space-y-4 border-t border-gray-700 ">
+        <div className="md:hidden bg-black px-6 py-6 text-white space-y-4 border-t border-gray-700">
           <a href="#home" className="block hover:text-[#F05A28]" onClick={() => setMobileOpen(false)}>Home</a>
 
           <button
