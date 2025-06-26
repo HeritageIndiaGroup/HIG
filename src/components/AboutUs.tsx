@@ -342,7 +342,9 @@ const AboutUs = () => {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-blue-900 mb-4">About Heritage India Group</h2>
+<h2 className="text-5xl font-extrabold mb-5 text-gray-900 leading-tight">
+  About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700">Heritage India</span> Group
+</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             A legacy of excellence spanning over two decades, building India's future through 
             innovation, integrity, and unwavering commitment to quality.

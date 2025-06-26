@@ -85,7 +85,14 @@ const Certifications = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-extrabold text-[#005BA1] mb-4">Certifications & Registrations</h2>
+          <h2 className="text-5xl font-extrabold mb-5 text-gray-900 leading-tight">
+  Certifications{' '}
+  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700">
+    &amp; Registrations
+  </span>
+</h2>
+
+
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             These credentials reflect our unwavering commitment to transparency, legality, and excellence.
           </p>

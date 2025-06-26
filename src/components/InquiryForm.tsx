@@ -91,7 +91,14 @@ Preferred Contact: ${formData.contactMethod}`;
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <MessageSquare className="h-16 w-16 text-blue-900 mx-auto mb-4" />
-          <h2 className="text-4xl font-bold text-blue-900 mb-4">Feel Free to Inquiry 😊</h2>
+          <h2 className="text-5xl font-extrabold mb-5 text-gray-900 leading-tight">
+  Feel Free to{' '}
+  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700">
+    Inquiry
+  </span>{' '}
+  😊
+</h2>
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Have questions about our services? Want to explore partnership opportunities?
             We're here to help you find the right solutions.

@@ -232,7 +232,13 @@ const Contact = () => {
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         {/* Header */}
         <header className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-4xl font-extrabold text-blue-600 mb-4">Contact Us</h2>
+     <h2 className="text-5xl font-extrabold mb-5 text-gray-900 leading-tight">
+  Contact{' '}
+  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700">
+    Us
+  </span>
+</h2>
+
           <p className="text-lg sm:text-xl text-gray-700">
             Get in touch with Heritage India Group. We're here to answer your questions and explore how we can work together.
           </p>
