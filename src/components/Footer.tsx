@@ -111,10 +111,10 @@ const Footer = () => {
             <div className="pt-4">
               <h5 className="text-sm font-semibold text-gray-400 mb-2">Contact Info</h5>
               <div className="text-sm text-gray-300 space-y-1">
-                <p>Heritage Tower, Sector 62</p>
-                <p>Noida, UP 201309, India</p>
+                <p>Heritage India Group</p>
+                <p>Dehradun, Uttarakhand, 244713, India</p>
                 <p>Phone: +91 120 4567890</p>
-                <p>Email: info@heritageindiagroup.com</p>
+                <p>Email: admin@heritageindiagroup.com</p>
               </div>
             </div>
           </div>

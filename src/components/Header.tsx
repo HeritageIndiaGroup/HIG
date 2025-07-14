@@ -1,14 +1,10 @@
-import Banner from '@/components/Banner';
 import Nav from '@/components/Nav';
 
 const Header = () => {
   return (
-    <>
-      <Banner />
-      <Nav />
-    </>
+    // Nav component now handles its own fixed positioning and background
+    <Nav />
   );
 };
 
 export default Header;
-
