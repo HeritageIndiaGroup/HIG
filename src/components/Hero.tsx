@@ -252,7 +252,12 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative w-full min-h-screen text-white pt-[50px]">
+    <section
+      id="home"
+      className="relative w-full min-h-screen text-white pt-[50px]"
+      role="banner"
+      aria-label="Heritage India Group Hero Section"
+    >
       {/* Background slideshow with Virtual rendering */}
       <Swiper
         modules={[Autoplay, EffectFade, Virtual]}
@@ -262,31 +267,34 @@ const Hero = () => {
         virtual
         className="absolute inset-0 w-full h-full z-0"
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        aria-hidden="true"
       >
         {heroImages.map((image, index) => (
           <SwiperSlide key={index} virtualIndex={index}>
             <div
               className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url(${image})`, willChange: 'transform' }}
+              role="img"
+              aria-label={`Heritage India Group company showcase image ${index + 1}`}
             />
           </SwiperSlide>
         ))}
       </Swiper>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50 z-10" />
+      <div className="absolute inset-0 bg-black/50 z-10" aria-hidden="true" />
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center justify-center text-center min-h-[calc(100vh-80px)] px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28">
         <div className="space-y-6 drop-shadow-[2px_2px_5px_rgba(0,0,0,0.8)] max-w-5xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-            <span className="text-[#FF9933]">Heritage</span>{' '}
+            <span className="text-heritage-saffron">Heritage</span>{' '}
             <span className="text-white">India</span>{' '}
-            <span className="block text-[#138808] font-extrabold">Group</span>
+            <span className="block text-heritage-green font-extrabold">Group</span>
           </h1>
 
           {/* Tagline */}
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#FFD700] min-h-[2.5rem]">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-accent min-h-[2.5rem]">
             {currentTagline}
           </h2>
 
@@ -308,6 +316,7 @@ const Hero = () => {
             <Button
               onClick={scrollToCompanies}
               className="inline-flex items-center gap-2 px-5 py-2 border border-white text-white text-sm font-semibold rounded-full bg-transparent hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-300 group"
+              aria-label="Scroll to explore our companies section"
             >
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 Explore Our Companies
@@ -319,17 +328,17 @@ const Hero = () => {
           {/* Hindi/English Stats */}
           <div className="grid grid-cols-3 gap-6 pt-10 max-w-3xl mx-auto text-center">
             <div className="flex flex-col items-center">
-              <Zap className="h-8 w-8 mb-2 text-[#FFD700]" />
+              <Zap className="h-8 w-8 mb-2 text-accent" aria-hidden="true" />
               <div className="text-xl font-bold">शक्ति</div>
               <div className="text-xl font-normal">Power</div>
             </div>
             <div className="flex flex-col items-center">
-              <TrendingUp className="h-8 w-8 mb-2 text-[#00A859]" />
+              <TrendingUp className="h-8 w-8 mb-2 text-success" aria-hidden="true" />
               <div className="text-xl font-bold">प्रगति</div>
               <div className="text-xl font-normal">Progress</div>
             </div>
             <div className="flex flex-col items-center">
-              <Trophy className="h-8 w-8 mb-2 text-[#F05A28]" />
+              <Trophy className="h-8 w-8 mb-2 text-heritage-saffron" aria-hidden="true" />
               <div className="text-xl font-bold">विजय</div>
               <div className="text-xl font-normal">Victory</div>
             </div>

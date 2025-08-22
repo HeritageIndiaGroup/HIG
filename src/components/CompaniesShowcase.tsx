@@ -54,23 +54,25 @@ const CompaniesShowcase = () => {
   return (
     <section
       id="companies"
-      className="py-20 bg-gradient-to-br from-[#eef4fa] to-white overflow-hidden"
+      className="py-20 bg-gradient-to-br from-muted to-background overflow-hidden"
+      role="region"
+      aria-labelledby="companies-heading"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-extrabold mb-5 text-gray-900 leading-tight">
+        <header className="text-center mb-16">
+          <h2 id="companies-heading" className="text-5xl font-extrabold mb-5 text-foreground leading-tight">
             Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-glow">
               Diverse
             </span>{" "}
             Portfolio
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto font-light">
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto font-light">
             Explore the vast network of Heritage India Group companies, each a
             beacon of innovation and a driving force in India's journey towards
             growth and prosperity.
           </p>
-        </div>
+        </header>
 
         <div className="relative">
           <Swiper
@@ -92,47 +94,43 @@ const CompaniesShowcase = () => {
               const color = CATEGORY_COLORS[company.category] || PRIMARY_COLOR;
               return (
                 <SwiperSlide key={company.id} className="h-auto">
-                  <Card className="h-full flex flex-col rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:-translate-y-2 border border-gray-100 bg-white">
+                  <Card className="h-full flex flex-col rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:-translate-y-2 border border-gray-100 bg-card">
                     <CardHeader className="p-0 relative">
-                      <div className="w-full h-40 bg-gray-100 overflow-hidden flex items-center justify-center">
+                      <div className="w-full h-40 bg-muted overflow-hidden flex items-center justify-center">
                         <img
                           src={company.image}
-                          alt={company.name}
+                          alt={`${company.name} - ${company.category} company logo and visual representation`}
                           loading="lazy"
                           className="w-full h-full object-cover transition-transform duration-300"
+                          width="400"
+                          height="200"
                         />
                       </div>
                       <div className="absolute top-4 left-4">
-                        <div
-                          className="px-3 py-1 text-xs font-semibold rounded-full shadow-sm"
-                          style={{ backgroundColor: color, color: "white" }}
+                        <span
+                          className="px-3 py-1 text-xs font-semibold rounded-full shadow-sm text-white"
+                          style={{ backgroundColor: color }}
                         >
                           {company.category}
-                        </div>
+                        </span>
                       </div>
                     </CardHeader>
                     <CardContent className="flex-grow flex flex-col p-6">
-                      <CardTitle className="text-xl font-bold mb-2 text-gray-800">
+                      <CardTitle className="text-xl font-bold mb-2 text-card-foreground">
                         {company.name}
                       </CardTitle>
-                      <CardDescription className="text-sm text-gray-600 flex-grow mb-4 leading-relaxed">
+                      <CardDescription className="text-sm text-muted-foreground flex-grow mb-4 leading-relaxed">
                         {company.description}
                       </CardDescription>
                       <Button
                         asChild
-                        className="w-full text-white font-semibold py-2 rounded-lg flex items-center justify-center transition-all duration-300 group mt-auto"
-                        style={{ backgroundColor: PRIMARY_COLOR }}
-                        onMouseEnter={(e) =>
-                          (e.currentTarget.style.backgroundColor = SECONDARY_COLOR)
-                        }
-                        onMouseLeave={(e) =>
-                          (e.currentTarget.style.backgroundColor = PRIMARY_COLOR)
-                        }
+                        className="w-full bg-primary text-primary-foreground font-semibold py-2 rounded-lg flex items-center justify-center transition-all duration-300 group mt-auto hover:bg-primary-hover"
                       >
                         <a
                           href={company.website}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`Visit ${company.name} website - opens in new tab`}
                         >
                           Visit Website
                           <ExternalLink className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-200" />
