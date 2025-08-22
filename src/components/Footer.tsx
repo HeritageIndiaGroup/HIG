@@ -112,8 +112,8 @@ const Footer = () => {
               <h5 className="text-sm font-semibold text-gray-400 mb-2">Contact Info</h5>
               <div className="text-sm text-gray-300 space-y-1">
                 <p>Heritage India Group</p>
-                <p>Dehradun, Uttarakhand, 244713, India</p>
-                <p>Phone: +91 120 4567890</p>
+                <p>Tea estate, near Durga temple,Banjarawala chowk, dehradun 248001,Uttarakhand, India</p>
+                <p>Phone: +91 8418878887</p>
                 <p>Email: admin@heritageindiagroup.com</p>
               </div>
             </div>
