@@ -195,11 +195,15 @@ const resources = {
   }
 };
 
+// Initialize saved language preference
+const savedLanguage = localStorage.getItem('language');
+const initialLanguage = (savedLanguage === 'en' || savedLanguage === 'hi') ? savedLanguage : 'en';
+
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'en', // default language
+    lng: initialLanguage, // use saved language or default to 'en'
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
