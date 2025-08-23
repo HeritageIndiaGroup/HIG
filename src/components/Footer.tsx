@@ -1,7 +1,10 @@
 import { Facebook, Twitter, Linkedin, Instagram, ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -13,12 +16,12 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: "About Us", href: "#about" },
-    { name: "Our Companies", href: "#companies" },
-    { name: "Careers", href: "#careers" },
+    { name: t('about'), href: "#about" },
+    { name: t('companies'), href: "#companies" },
+    { name: t('career'), href: "#career" },
     { name: "Investor Relations", href: "#investor" },
     { name: "News & Media", href: "#news" },
-    { name: "Contact Us", href: "#contact" }
+    { name: t('contact'), href: "#contact" }
   ];
 
   return (
@@ -59,7 +62,7 @@ const Footer = () => {
 
           {/* Our Companies */}
           <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-yellow-400">Our Companies</h4>
+            <h4 className="text-lg font-semibold text-yellow-400">{t('companies')}</h4>
             <div className="grid gap-2">
               {companyLinks.slice(0, 6).map((company, index) => (
                 <a
@@ -95,7 +98,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-yellow-400">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-yellow-400">{t('quickLinks')}</h4>
             <div className="grid gap-2">
               {quickLinks.map((link, index) => (
                 <a
@@ -123,7 +126,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-400">&copy; 2024 Heritage India Group. All rights reserved.</p>
+            <p className="text-sm text-gray-400">&copy; 2024 Heritage India Group. {t('allRightsReserved')}</p>
 
             <div className="flex items-center gap-6">
               <div className="flex space-x-4 text-sm text-gray-400">

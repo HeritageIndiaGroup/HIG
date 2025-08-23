@@ -178,12 +178,15 @@
 
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+  const { t } = useTranslation();
+  
   const mergedContactInfo = [
     {
       icon: MapPin,
-      title: "Head Office",
+      title: t('headOffice'),
       details: [
         "C/o. Saroj Gupta, Chandpur Industrial Estate Chandpur",
         "Varanasi, Uttar Pradesh 221106",
@@ -192,7 +195,7 @@ const Contact = () => {
     },
     {
       icon: Phone,
-      title: "Phone Numbers",
+      title: t('phoneNumbers'),
       details: [
         "+91 8418878887",
         "Toll Free: 8418878887",
@@ -200,7 +203,7 @@ const Contact = () => {
     },
     {
       icon: Mail,
-      title: "Email Addresses",
+      title: t('emailAddresses'),
       details: [
         "admin@heritageindiagroup.com",
         "admin@higproductionhouse.com",
@@ -209,7 +212,7 @@ const Contact = () => {
     },
     {
       icon: Clock,
-      title: "Business Hours",
+      title: t('businessHours'),
       details: [
         "Monday - Friday: 9:00 AM - 6:00 PM",
         "Saturday: 9:00 AM - 1:00 PM",
@@ -242,14 +245,11 @@ const Contact = () => {
         {/* Header */}
         <header className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-5xl font-extrabold mb-5 text-gray-900 leading-tight">
-            Contact{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700">
-              Us
-            </span>
+            {t('contactTitle')}
           </h2>
 
           <p className="text-lg sm:text-xl text-gray-700">
-            Get in touch with Heritage India Group. We're here to answer your questions and explore how we can work together.
+            {t('contactSubtitle')}
           </p>
         </header>
 
@@ -257,7 +257,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Merged Contact Info */}
           <div>
-            <h3 className="text-2xl font-bold text-black mb-8">Get In Touch</h3>
+            <h3 className="text-2xl font-bold text-black mb-8">{t('getInTouch')}</h3>
             <Card className="bg-white shadow-lg rounded-xl transition-transform transform hover:scale-[1.02] hover:shadow-2xl duration-300">
               <CardContent className="p-8 space-y-10">
                 {mergedContactInfo.map(({ icon: Icon, title, details }, idx) => (
@@ -283,7 +283,7 @@ const Contact = () => {
 
           {/* Map and Regional Offices */}
           <div>
-            <h3 className="text-2xl font-bold text-black mb-8">Our Location</h3>
+            <h3 className="text-2xl font-bold text-black mb-8">{t('ourLocation')}</h3>
 
             <a
               href="https://maps.app.goo.gl/VBoFzE8s1HiuwtiD9"
@@ -310,7 +310,7 @@ const Contact = () => {
               </Card>
             </a>
 
-            <h4 className="text-2xl font-bold text-black mb-6">Regional Offices</h4>
+            <h4 className="text-2xl font-bold text-black mb-6">{t('regionalOffices')}</h4>
             <div className="space-y-6">
               {regionalOffices.map(({ title, address }, idx) => (
                 <Card

@@ -174,6 +174,7 @@ import { ArrowRight, Zap, TrendingUp, Trophy } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade, Virtual } from 'swiper/modules';
 import { Typewriter } from 'react-simple-typewriter';
+import { useTranslation } from 'react-i18next';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 
@@ -204,36 +205,37 @@ const heroImages = [
   media2Image,
 ];
 
-const taglines = [
-  'HIG Agro Producer:',
-  'HIG Micro Services:',
-  'HIG Media & Education:',
-  'HIG Hotel & Resort:',
-  'HIG Infra Venture:',
-  'HIG Glam Factory:',
-  'KashiKedarnath:',
-  'HIG Finance:',
-  'HIG Mart:',
-  'HIG Dasandas Traders:',
-  'HIG Media & Education:',
-];
-
-const descriptions = [
-  'Cultivating prosperity, empowering farmers.',
-  'Building resilient communities, fostering social change.',
-  'Shaping minds, crafting stories.',
-  'Redefining luxury, creating memorable stays.',
-  'Constructing the future, one foundation at a time.',
-  'Innovating beauty, crafting excellence.',
-  'Enriching spiritual journeys, promoting cultural heritage.',
-  'Empowering financial growth, securing your future.',
-  'Your daily essentials, delivered with ease.',
-  'Global trade, local impact.',
-  'Shaping minds, crafting stories. (Additional Media)',
-];
-
 const Hero = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { t } = useTranslation();
+
+  const taglines = [
+    t('taglinesAgro'),
+    t('taglinesMicro'), 
+    t('taglinesMedia'),
+    t('taglinesHotel'),
+    t('taglinesInfra'),
+    t('taglinesGlam'),
+    t('taglinesKashi'),
+    t('taglinesFinance'),
+    t('taglinesMart'),
+    t('taglinesTraders'),
+    t('taglinesMedia'),
+  ];
+
+  const descriptions = [
+    t('descAgro'),
+    t('descMicro'),
+    t('descMedia'),
+    t('descHotel'),
+    t('descInfra'),
+    t('descGlam'),
+    t('descKashi'),
+    t('descFinance'),
+    t('descMart'),
+    t('descTraders'),
+    t('descMediaExtra'),
+  ];
 
   const currentTagline = useMemo(() => taglines[activeIndex], [activeIndex]);
   const currentDescription = useMemo(() => [descriptions[activeIndex]], [activeIndex]);
@@ -288,9 +290,9 @@ const Hero = () => {
       <div className="relative z-20 flex flex-col items-center justify-center text-center min-h-[calc(100vh-80px)] px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28">
         <div className="space-y-6 drop-shadow-[2px_2px_5px_rgba(0,0,0,0.8)] max-w-5xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-            <span className="text-heritage-saffron">Heritage</span>{' '}
-            <span className="text-white">India</span>{' '}
-            <span className="block text-heritage-green font-extrabold">Group</span>
+            <span className="text-heritage-saffron">{t('heritage')}</span>{' '}
+            <span className="text-white">{t('india')}</span>{' '}
+            <span className="block text-heritage-green font-extrabold">{t('group')}</span>
           </h1>
 
           {/* Tagline */}
@@ -319,7 +321,7 @@ const Hero = () => {
               aria-label="Scroll to explore our companies section"
             >
               <span className="transition-transform duration-300 group-hover:translate-x-1">
-                Explore Our Companies
+                {t('exploreCompanies')}
               </span>
               <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-300" />
             </Button>
@@ -330,17 +332,17 @@ const Hero = () => {
             <div className="flex flex-col items-center">
               <Zap className="h-8 w-8 mb-2 text-accent" aria-hidden="true" />
               <div className="text-xl font-bold">शक्ति</div>
-              <div className="text-xl font-normal">Power</div>
+              <div className="text-xl font-normal">{t('power')}</div>
             </div>
             <div className="flex flex-col items-center">
               <TrendingUp className="h-8 w-8 mb-2 text-success" aria-hidden="true" />
               <div className="text-xl font-bold">प्रगति</div>
-              <div className="text-xl font-normal">Progress</div>
+              <div className="text-xl font-normal">{t('progress')}</div>
             </div>
             <div className="flex flex-col items-center">
               <Trophy className="h-8 w-8 mb-2 text-heritage-saffron" aria-hidden="true" />
               <div className="text-xl font-bold">विजय</div>
-              <div className="text-xl font-normal">Victory</div>
+              <div className="text-xl font-normal">{t('victory')}</div>
             </div>
           </div>
         </div>

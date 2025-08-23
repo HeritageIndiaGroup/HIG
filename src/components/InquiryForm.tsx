@@ -20,6 +20,7 @@ import {
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useToast } from '@/hooks/use-toast';
 import { Send, MessageSquare } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const companies = [
   "HIG - HERITAGE INDIA AGRO PRODUCER COMPANY LIMITED",
@@ -36,6 +37,7 @@ const companies = [
 ];
 
 const InquiryForm = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -92,16 +94,11 @@ Preferred Contact: ${formData.contactMethod}`;
         <div className="text-center mb-16">
           <MessageSquare className="h-16 w-16 text-blue-900 mx-auto mb-4" />
           <h2 className="text-5xl font-extrabold mb-5 text-gray-900 leading-tight">
-  Feel Free to{' '}
-  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700">
-    Inquiry
-  </span>{' '}
-  😊
-</h2>
+            {t('inquiryTitle')} 😊
+          </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Have questions about our services? Want to explore partnership opportunities?
-            We're here to help you find the right solutions.
+            {t('inquirySubtitle')}
           </p>
         </div>
 
@@ -119,13 +116,13 @@ Preferred Contact: ${formData.contactMethod}`;
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name" className="text-gray-700 font-semibold">
-                      Full Name *
+                      {t('fullName')} *
                     </Label>
                     <Input
                       id="name"
                       value={formData.name}
                       onChange={(e) => handleInputChange('name', e.target.value)}
-                      placeholder="Enter your full name"
+                      placeholder={t('fullName')}
                       required
                       className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                     />
@@ -133,14 +130,14 @@ Preferred Contact: ${formData.contactMethod}`;
 
                   <div className="space-y-2">
                     <Label htmlFor="email" className="text-gray-700 font-semibold">
-                      Email Address *
+                      {t('email')} *
                     </Label>
                     <Input
                       id="email"
                       type="email"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
-                      placeholder="Enter your email address"
+                      placeholder={t('email')}
                       required
                       className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                     />
@@ -150,7 +147,7 @@ Preferred Contact: ${formData.contactMethod}`;
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="phone" className="text-gray-700 font-semibold">
-                      Phone Number *
+                      {t('phoneNumber')} *
                     </Label>
                     <Input
                       id="phone"
@@ -158,7 +155,7 @@ Preferred Contact: ${formData.contactMethod}`;
                       inputMode="numeric"
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
-                      placeholder="Enter your phone number"
+                      placeholder={t('phoneNumber')}
                       required
                       className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                     />
@@ -166,7 +163,7 @@ Preferred Contact: ${formData.contactMethod}`;
 
                   <div className="space-y-2">
                     <Label htmlFor="company" className="text-gray-700 font-semibold">
-                      Which Company? *
+                      {t('companyName')} *
                     </Label>
                     <Select value={formData.company} onValueChange={(value) => handleInputChange('company', value)}>
                       <SelectTrigger className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
@@ -200,13 +197,13 @@ Preferred Contact: ${formData.contactMethod}`;
 
                 <div className="space-y-2">
                   <Label htmlFor="message" className="text-gray-700 font-semibold">
-                    Message *
+                    {t('message')} *
                   </Label>
                   <Textarea
                     id="message"
                     value={formData.message}
                     onChange={(e) => handleInputChange('message', e.target.value)}
-                    placeholder="Please provide details about your inquiry..."
+                    placeholder={t('message')}
                     required
                     rows={6}
                     className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
@@ -237,7 +234,7 @@ Preferred Contact: ${formData.contactMethod}`;
                   type="submit"
                   className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 text-lg transition-all duration-300 transform hover:scale-105"
                 >
-                  Send via WhatsApp
+                  {t('submit')}
                   <Send className="ml-2 h-5 w-5" />
                 </Button>
               </form>

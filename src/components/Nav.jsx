@@ -1,22 +1,24 @@
 import { useEffect, useState } from 'react';
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from 'react-i18next';
 import logo from '../assets/logo.png';
 import { useIsMobile } from '@/hooks/use-mobile';
-// import { companies } from '@/components/CompaniesShowcase';
 import { companies } from '@/data/companies';
-
-const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Our Companies', href: '#companies' },
-  { label: 'Gallery', href: '/gallery', external: true },
-  { label: 'Certifications', href: '#certifications' },
-  { label: 'Career', href: '/career', external: true },
-  { label: 'Inquiry', href: '#inquiry' },
-];
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Nav = () => {
+  const { t } = useTranslation();
+  
+  const navLinks = [
+    { label: t('home'), href: '#home' },
+    { label: t('about'), href: '#about' },
+    { label: t('companies'), href: '#companies' },
+    { label: t('gallery'), href: '/gallery', external: true },
+    { label: t('certifications'), href: '#certifications' },
+    { label: t('career'), href: '/career', external: true },
+    { label: t('inquiry'), href: '#inquiry' },
+  ];
   const [isSticky, setIsSticky] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -128,7 +130,7 @@ const Nav = () => {
                     <div className="flex justify-between items-center pt-3">
                       <div className="flex gap-5 text-base items-center flex-wrap">
                         {navLinks.map((item) => {
-                          if (item.label === 'Our Companies') {
+                          if (item.label === t('companies')) {
                             return (
                               <div key={item.href} className="relative group">
                                 <a
@@ -186,16 +188,19 @@ const Nav = () => {
                           );
                         })}
                       </div>
-                      <a href="#contact" className="ml-3">
-                        <Button
-                          className={`rounded-full px-4 py-1 text-base font-normal border ${isSticky
-                              ? 'bg-transparent text-black border-black hover:bg-gray-100'
-                              : 'bg-transparent text-white border-white hover:bg-white hover:text-black'
-                            }`}
-                        >
-                          Contact Us
-                        </Button>
-                      </a>
+                      <div className="flex items-center gap-3 ml-3">
+                        <LanguageSwitcher isSticky={isSticky} />
+                        <a href="#contact">
+                          <Button
+                            className={`rounded-full px-4 py-1 text-base font-normal border ${isSticky
+                                ? 'bg-transparent text-black border-black hover:bg-gray-100'
+                                : 'bg-transparent text-white border-white hover:bg-white hover:text-black'
+                              }`}
+                          >
+                            {t('contact')}
+                          </Button>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -229,7 +234,7 @@ const Nav = () => {
             {isMobile && isMobileMenuOpen && (
               <div className="fixed inset-0 bg-white text-black p-6 z-50 overflow-y-auto">
                 <div className="flex justify-between items-center mb-4">
-                  <h2 className="text-lg font-semibold">Menu</h2>
+                  <h2 className="text-lg font-semibold">{t('menu')}</h2>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="p-2"
@@ -239,7 +244,7 @@ const Nav = () => {
                 </div>
                 <div className="mt-4 flex flex-col gap-3">
                   {navLinks.map((item) => {
-                    if (item.label === 'Our Companies') {
+                    if (item.label === t('companies')) {
                       return (
                         <div key={item.href}>
                           <button
@@ -292,11 +297,14 @@ const Nav = () => {
                       </a>
                     );
                   })}
-                  <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button className="w-full mt-2 bg-black text-white hover:bg-gray-800">
-                      Contact Us
-                    </Button>
-                  </a>
+                  <div className="mt-4 space-y-3">
+                    <LanguageSwitcher isSticky={true} />
+                    <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                      <Button className="w-full bg-black text-white hover:bg-gray-800">
+                        {t('contact')}
+                      </Button>
+                    </a>
+                  </div>
                 </div>
               </div>
             )}
