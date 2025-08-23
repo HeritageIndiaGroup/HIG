@@ -92,6 +92,40 @@ const resources = {
       inquiryTitle: "Get in Touch",
       inquirySubtitle: "Have questions or want to learn more about our services? We'd love to hear from you.",
       
+      // Companies Showcase
+      companiesTitle: "Our Diverse Portfolio", 
+      companiesSubtitle: "Explore the vast network of Heritage India Group companies, each a beacon of innovation and a driving force in India's journey towards growth and prosperity.",
+      visitWebsite: "Visit Website",
+      
+      // Gallery
+      galleryTitle: "Our Gallery",
+      photos: "Photos",
+      videos: "Videos",
+      
+      // Career 
+      careerTitle: "Shape Your Future With Us",
+      careerSubtitle: "We're always looking for passionate individuals to join our growing team. Explore our current opportunities and take the next step in your career.",
+      jobOpenings: "Current Job Openings",
+      applyNow: "Apply Now",
+      applyHere: "Apply Here",
+      sendApplication: "Send Your Application",
+      applicationRedirect: "You'll be redirected to a secure Google Form to submit your application and upload your resume.",
+      fullTime: "Full-Time",
+      
+      // Job Titles
+      frontendDeveloper: "Frontend Developer",
+      hrExecutive: "HR Executive", 
+      marketingManager: "Marketing Manager",
+      uiuxDesigner: "UI/UX Designer",
+      backendDeveloper: "Backend Developer",
+      
+      // Job Descriptions
+      frontendDesc: "We are seeking an experienced Frontend Developer with a strong command of React, Tailwind CSS, and modern animation libraries to build stunning user interfaces. A minimum of 2 years of professional experience is preferred.",
+      hrDesc: "Join our dynamic HR team! We are looking for an HR Executive with proven experience in end-to-end recruitment processes, onboarding, and employee relations. Strong communication skills are essential.",
+      marketingDesc: "Lead our marketing initiatives! We require a creative and results-driven Marketing Manager skilled in digital marketing strategies, campaign management, and leading a small team to achieve business objectives.",
+      uiuxDesc: "Craft intuitive and beautiful user experiences. We are searching for a talented UI/UX Designer with expertise in user research, wireframing, prototyping, and design tools like Figma or Sketch.",
+      backendDesc: "Build robust and scalable server-side applications. We need a Backend Developer proficient in Node.js, Python, or Go, with experience in database design and API development.",
+      
       // Language
       language: "Language",
       english: "English",
@@ -186,6 +220,40 @@ const resources = {
       submit: "संदेश भेजें",
       inquiryTitle: "संपर्क करें",
       inquirySubtitle: "क्या कोई प्रश्न हैं या हमारी सेवाओं के बारे में और जानना चाहते हैं? हम आपसे सुनना चाहेंगे।",
+      
+      // Companies Showcase
+      companiesTitle: "हमारा विविध पोर्टफोलियो",
+      companiesSubtitle: "हेरिटेज इंडिया ग्रुप की कंपनियों के विशाल नेटवर्क का अन्वेषण करें, जो प्रत्येक नवाचार की किरण है और भारत की विकास और समृद्धि की यात्रा में एक प्रेरक शक्ति है।",
+      visitWebsite: "वेबसाइट पर जाएं",
+      
+      // Gallery
+      galleryTitle: "हमारी गैलरी",
+      photos: "तस्वीरें",
+      videos: "वीडियो",
+      
+      // Career
+      careerTitle: "हमारे साथ अपना भविष्य बनाएं",
+      careerSubtitle: "हम हमेशा अपनी बढ़ती टीम में शामिल होने के लिए जुनूनी व्यक्तियों की तलाश में हैं। हमारे वर्तमान अवसरों का अन्वेषण करें और अपने करियर में अगला कदम उठाएं।",
+      jobOpenings: "वर्तमान नौकरी के अवसर",
+      applyNow: "अभी आवेदन करें",
+      applyHere: "यहाँ आवेदन करें",
+      sendApplication: "अपना आवेदन भेजें",
+      applicationRedirect: "आपका आवेदन भेजने और अपना रिज्यूमे अपलोड करने के लिए आपको एक सुरक्षित गूगल फॉर्म पर भेजा जाएगा।",
+      fullTime: "पूर्णकालिक",
+      
+      // Job Titles
+      frontendDeveloper: "फ्रंटएंड डेवलपर",
+      hrExecutive: "एचआर एक्जीक्यूटिव",
+      marketingManager: "मार्केटिंग मैनेजर", 
+      uiuxDesigner: "UI/UX डिजाइनर",
+      backendDeveloper: "बैकएंड डेवलपर",
+      
+      // Job Descriptions
+      frontendDesc: "हम एक अनुभवी फ्रंटएंड डेवलपर की तलाश में हैं जिसे React, Tailwind CSS और आधुनिक एनीमेशन लाइब्रेरीज़ का मजबूत ज्ञान हो। न्यूनतम 2 साल का पेशेवर अनुभव प्राथमिकता है।",
+      hrDesc: "हमारी गतिशील HR टीम में शामिल हों! हम एक HR एक्जीक्यूटिव की तलाश में हैं जिसे भर्ती प्रक्रिया, ऑनबोर्डिंग और कर्मचारी संबंधों का अनुभव हो।",
+      marketingDesc: "हमारी मार्केटिंग पहलों का नेतृत्व करें! हमें एक रचनात्मक और परिणाम-केंद्रित मार्केटिंग मैनेजर की आवश्यकता है जो डिजिटल मार्केटिंग रणनीतियों में कुशल हो।",
+      uiuxDesc: "सहज और सुंदर उपयोगकर्ता अनुभव तैयार करें। हम एक प्रतिभाशाली UI/UX डिजाइनर की खोज में हैं जिसे उपयोगकर्ता अनुसंधान का अनुभव हो।",
+      backendDesc: "मजबूत और स्केलेबल सर्वर-साइड एप्लिकेशन बनाएं। हमें Node.js, Python या Go में दक्ष बैकएंड डेवलपर की आवश्यकता है।",
       
       // Language
       language: "भाषा",

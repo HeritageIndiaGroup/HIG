@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { PlayCircle, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const photos = [
   'https://images.unsplash.com/photo-1593642634367-d91a135587b5',
@@ -47,6 +48,7 @@ const videos = [
 ];
 
 const Gallery = () => {
+  const { t } = useTranslation();
   // State to manage active tab (photos or videos)
   const [activeTab, setActiveTab] = useState('photos');
   // State to manage lightbox visibility and content
@@ -65,7 +67,7 @@ const Gallery = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-10 font-sans" id="gallery">
       {/* Gallery Section Title */}
-      <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">Our Gallery</h2>
+      <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">{t('galleryTitle')}</h2>
 
       {/* Tabs for Photos and Videos */}
       <div className="flex justify-center gap-4 mb-16">
@@ -78,7 +80,7 @@ const Gallery = () => {
             }`}
           aria-pressed={activeTab === 'photos'}
         >
-          Photos
+          {t('photos')}
         </button>
         <button
           onClick={() => setActiveTab('videos')}
@@ -89,7 +91,7 @@ const Gallery = () => {
             }`}
           aria-pressed={activeTab === 'videos'}
         >
-          Videos
+          {t('videos')}
         </button>
       </div>
 

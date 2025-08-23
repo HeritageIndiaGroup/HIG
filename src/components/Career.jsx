@@ -4,41 +4,44 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-
-const jobOpenings = [
-  {
-    title: 'Frontend Developer',
-    location: 'Noida, India',
-    type: 'Full-Time',
-    description: 'We are seeking an experienced Frontend Developer with a strong command of React, Tailwind CSS, and modern animation libraries to build stunning user interfaces. A minimum of 2 years of professional experience is preferred.',
-  },
-  {
-    title: 'HR Executive',
-    location: 'Delhi, India',
-    type: 'Full-Time',
-    description: 'Join our dynamic HR team! We are looking for an HR Executive with proven experience in end-to-end recruitment processes, onboarding, and employee relations. Strong communication skills are essential.',
-  },
-  {
-    title: 'Marketing Manager',
-    location: 'Mumbai, India',
-    type: 'Full-Time',
-    description: 'Lead our marketing initiatives! We require a creative and results-driven Marketing Manager skilled in digital marketing strategies, campaign management, and leading a small team to achieve business objectives.',
-  },
-  {
-    title: 'UI/UX Designer',
-    location: 'Remote',
-    type: 'Full-Time',
-    description: 'Craft intuitive and beautiful user experiences. We are searching for a talented UI/UX Designer with expertise in user research, wireframing, prototyping, and design tools like Figma or Sketch.',
-  },
-  {
-    title: 'Backend Developer',
-    location: 'Hyderabad, India',
-    type: 'Full-Time',
-    description: 'Build robust and scalable server-side applications. We need a Backend Developer proficient in Node.js, Python, or Go, with experience in database design and API development.',
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 export default function Career() {
+  const { t } = useTranslation();
+  
+  const jobOpenings = [
+    {
+      title: t('frontendDeveloper'),
+      location: 'Noida, India',
+      type: t('fullTime'),
+      description: t('frontendDesc'),
+    },
+    {
+      title: t('hrExecutive'),
+      location: 'Delhi, India',
+      type: t('fullTime'),
+      description: t('hrDesc'),
+    },
+    {
+      title: t('marketingManager'),
+      location: 'Mumbai, India',
+      type: t('fullTime'),
+      description: t('marketingDesc'),
+    },
+    {
+      title: t('uiuxDesigner'),
+      location: 'Remote',
+      type: t('fullTime'),
+      description: t('uiuxDesc'),
+    },
+    {
+      title: t('backendDeveloper'),
+      location: 'Hyderabad, India',
+      type: t('fullTime'),
+      description: t('backendDesc'),
+    },
+  ];
+  
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
@@ -60,18 +63,17 @@ export default function Career() {
       {/* Hero Section */}
       <section className="text-center mb-16" data-aos="fade-up">
         <h1 className="text-5xl font-extrabold mb-4 text-blue-900 leading-tight">
-          Shape Your Future With Us
+          {t('careerTitle')}
         </h1>
         <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-          We're always looking for passionate individuals to join our growing team.
-          Explore our current opportunities and take the next step in your career.
+          {t('careerSubtitle')}
         </p>
       </section>
 
       {/* Job Cards */}
       <section className="mb-20">
         <h2 className="text-3xl font-bold text-center mb-10 text-blue-800" data-aos="fade-up">
-          Current Job Openings
+          {t('jobOpenings')}
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {jobOpenings.map((job, index) => (
@@ -105,7 +107,7 @@ export default function Career() {
                   style={{ backgroundColor: '#005BA1', color: 'white' }}
                   className="w-full font-semibold py-2 rounded-lg flex items-center justify-center gap-2 transition-colors hover:brightness-110"
                 >
-                  Apply Now <Send className="w-4 h-4" />
+                  {t('applyNow')} <Send className="w-4 h-4" />
                 </Button>
               </div>
             </Card>
@@ -122,17 +124,17 @@ export default function Career() {
       >
         <Card className="shadow-2xl border border-blue-300 rounded-xl overflow-hidden bg-white">
           <CardHeader className="bg-blue-800 text-white p-6 flex flex-col items-center text-center">
-            <CardTitle className="text-3xl font-bold mb-2">Apply Now</CardTitle>
+            <CardTitle className="text-3xl font-bold mb-2">{t('applyNow')}</CardTitle>
             <CardDescription
               className="text-xl font-semibold"
               style={{ color: '#005BA1' }}
             >
-              Send Your Application
+              {t('sendApplication')}
             </CardDescription>
           </CardHeader>
           <CardContent className="p-8 space-y-6">
             <p className="text-lg text-gray-700">
-              You’ll be redirected to a secure Google Form to submit your application and upload your resume.
+              {t('applicationRedirect')}
             </p>
             <a
               href={googleFormLink}
@@ -143,7 +145,7 @@ export default function Career() {
                 style={{ backgroundColor: '#005BA1', color: '#fff' }}
                 className="w-full font-semibold py-3 rounded-lg flex items-center justify-center gap-3 transition-colors hover:brightness-110 shadow-md"
               >
-                Apply Here
+                {t('applyHere')}
                 <Send className="w-6 h-6" />
               </Button>
             </a>

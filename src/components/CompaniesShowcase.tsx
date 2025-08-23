@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
@@ -51,6 +52,8 @@ const SwiperNavButtons = () => {
 };
 
 const CompaniesShowcase = () => {
+  const { t } = useTranslation();
+  
   return (
     <section
       id="companies"
@@ -61,16 +64,10 @@ const CompaniesShowcase = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-16">
           <h2 id="companies-heading" className="text-5xl font-extrabold mb-5 text-foreground leading-tight">
-            Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-glow">
-              Diverse
-            </span>{" "}
-            Portfolio
+            {t('companiesTitle')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto font-light">
-            Explore the vast network of Heritage India Group companies, each a
-            beacon of innovation and a driving force in India's journey towards
-            growth and prosperity.
+            {t('companiesSubtitle')}
           </p>
         </header>
 
@@ -132,7 +129,7 @@ const CompaniesShowcase = () => {
                           rel="noopener noreferrer"
                           aria-label={`Visit ${company.name} website - opens in new tab`}
                         >
-                          Visit Website
+                          {t('visitWebsite')}
                           <ExternalLink className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-200" />
                         </a>
                       </Button>
