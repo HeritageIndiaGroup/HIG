@@ -105,9 +105,9 @@ Preferred Contact: ${formData.contactMethod}`;
         <div className="max-w-4xl mx-auto">
           <Card className="shadow-2xl border-0">
             <CardHeader className="bg-gradient-to-r from-blue-900 to-blue-700 text-white rounded-t-lg">
-              <CardTitle className="text-2xl font-bold">Send us an Inquiry</CardTitle>
+              <CardTitle className="text-2xl font-bold">{t('sendInquiry')}</CardTitle>
               <CardDescription className="text-blue-100">
-                Fill out the form below and your inquiry will be sent via WhatsApp for quick response.
+                {t('inquiryDescription')}
               </CardDescription>
             </CardHeader>
 
@@ -170,7 +170,7 @@ Preferred Contact: ${formData.contactMethod}`;
                         <SelectValue placeholder="Select a company" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="general">General Inquiry</SelectItem>
+                        <SelectItem value="general">{t('generalInquiry')}</SelectItem>
                         {companies.map((company) => (
                           <SelectItem key={company} value={company}>
                             {company}
@@ -221,11 +221,11 @@ Preferred Contact: ${formData.contactMethod}`;
                   >
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="email" id="email-contact" />
-                      <Label htmlFor="email-contact" className="text-gray-600">Email</Label>
+                      <Label htmlFor="email-contact" className="text-gray-600">{t('emailOption')}</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="phone" id="phone-contact" />
-                      <Label htmlFor="phone-contact" className="text-gray-600">Phone</Label>
+                      <Label htmlFor="phone-contact" className="text-gray-600">{t('phoneOption')}</Label>
                     </div>
                   </RadioGroup>
                 </div>

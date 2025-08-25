@@ -36,8 +36,8 @@ const Footer = () => {
                   <span className="text-white font-bold text-lg">H</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">Heritage India Group</h3>
-                  <p className="text-sm text-gray-400">Building Tomorrow's Legacy</p>
+                  <h3 className="text-xl font-bold">{t('heritageIndiaGroup')}</h3>
+                  <p className="text-sm text-gray-400">{t('buildingTomorrowsLegacy')}</p>
                 </div>
               </div>
               <p className="text-gray-300 leading-relaxed text-sm">
@@ -80,7 +80,7 @@ const Footer = () => {
 
           {/* More Companies */}
           <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-yellow-400">More Companies</h4>
+            <h4 className="text-lg font-semibold text-yellow-400">{t('moreCompanies')}</h4>
             <div className="grid gap-2">
               {companyLinks.slice(6).map((company, index) => (
                 <a
@@ -112,9 +112,9 @@ const Footer = () => {
             </div>
 
             <div className="pt-4">
-              <h5 className="text-sm font-semibold text-gray-400 mb-2">Contact Info</h5>
+              <h5 className="text-sm font-semibold text-gray-400 mb-2">{t('contactInfo')}</h5>
               <div className="text-sm text-gray-300 space-y-1">
-                <p>Heritage India Group</p>
+                <p>{t('heritageIndiaGroup')}</p>
                 <p>Tea estate, near Durga temple,Banjarawala chowk, dehradun 248001,Uttarakhand, India</p>
                 <p>Phone: +91 8418878887</p>
                 <p>Email: admin@heritageindiagroup.com</p>
@@ -130,9 +130,9 @@ const Footer = () => {
 
             <div className="flex items-center gap-6">
               <div className="flex space-x-4 text-sm text-gray-400">
-                <a href="#privacy" className="hover:text-white">Privacy Policy</a>
-                <a href="#terms" className="hover:text-white">Terms of Service</a>
-                <a href="#sitemap" className="hover:text-white">Sitemap</a>
+                <a href="#privacy" className="hover:text-white">{t('privacyPolicy')}</a>
+                <a href="#terms" className="hover:text-white">{t('termsOfService')}</a>
+                <a href="#sitemap" className="hover:text-white">{t('sitemap')}</a>
               </div>
 
               <Button

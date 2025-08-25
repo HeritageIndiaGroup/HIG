@@ -31,6 +31,7 @@ import {
   MessageCircle,
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useTranslation } from 'react-i18next';
 
 import logo from '@/assets/logo.png';
 
@@ -49,6 +50,7 @@ const companies = [
 ];
 
 const Popup = () => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -123,10 +125,10 @@ Preferred Contact: ${formData.contactMethod}`;
           <img src={logo} alt="HIG Logo" className="h-14 w-auto object-contain" />
           <h2 className="text-xl font-semibold text-blue-900 flex items-center gap-2">
             <MessageSquare className="h-5 w-5 text-blue-700" />
-            We'd Love to Hear From You
+            {t('inquiryTitle')}
           </h2>
           <p className="text-gray-600 text-sm text-center">
-            Send your message via WhatsApp.
+            {t('inquiryDescription')}
           </p>
         </div>
 
@@ -134,24 +136,24 @@ Preferred Contact: ${formData.contactMethod}`;
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="name">{renderLabel(User, "Full Name *")}</Label>
+              <Label htmlFor="name">{renderLabel(User, `${t('fullName')} *`)}</Label>
               <Input
                 id="name"
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
-                placeholder="Your full name"
+                placeholder={t('fullName')}
                 required
               />
             </div>
 
             <div>
-              <Label htmlFor="email">{renderLabel(Mail, "Email Address *")}</Label>
+              <Label htmlFor="email">{renderLabel(Mail, `${t('email')} *`)}</Label>
               <Input
                 id="email"
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
-                placeholder="you@example.com"
+                placeholder={t('email')}
                 required
               />
             </div>
@@ -159,29 +161,29 @@ Preferred Contact: ${formData.contactMethod}`;
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="phone">{renderLabel(Phone, "Phone Number *")}</Label>
+              <Label htmlFor="phone">{renderLabel(Phone, `${t('phoneNumber')} *`)}</Label>
               <Input
                 id="phone"
                 type="tel"
                 inputMode="numeric"
                 value={formData.phone}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
-                placeholder="Your phone number"
+                placeholder={t('phoneNumber')}
                 required
               />
             </div>
 
             <div>
-              <Label>{renderLabel(Building2, "Select Company *")}</Label>
+              <Label>{renderLabel(Building2, `${t('selectCompany')} *`)}</Label>
               <Select
                 value={formData.company}
                 onValueChange={(value) => handleInputChange('company', value)}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Choose company or inquiry type" />
+                  <SelectValue placeholder={t('selectCompany')} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="general">General Inquiry</SelectItem>
+                  <SelectItem value="general">{t('generalInquiry')}</SelectItem>
                   {companies.map((company) => (
                     <SelectItem key={company} value={company}>
                       {company}
@@ -193,30 +195,30 @@ Preferred Contact: ${formData.contactMethod}`;
           </div>
 
           <div>
-            <Label htmlFor="subject">{renderLabel(FileText, "Subject *")}</Label>
+            <Label htmlFor="subject">{renderLabel(FileText, `${t('message')} *`)}</Label>
             <Input
               id="subject"
               value={formData.subject}
               onChange={(e) => handleInputChange('subject', e.target.value)}
-              placeholder="Quick summary of your message"
+              placeholder={t('message')}
               required
             />
           </div>
 
           <div>
-            <Label htmlFor="message">{renderLabel(MessageCircle, "Your Message *")}</Label>
+            <Label htmlFor="message">{renderLabel(MessageCircle, `${t('message')} *`)}</Label>
             <Textarea
               id="message"
               value={formData.message}
               onChange={(e) => handleInputChange('message', e.target.value)}
-              placeholder="Tell us how we can help you..."
+              placeholder={t('message')}
               required
               rows={4}
             />
           </div>
 
           <div>
-            <Label className="mb-1 block">Preferred Contact Method</Label>
+            <Label className="mb-1 block">{t('preferredContact')}</Label>
             <RadioGroup
               value={formData.contactMethod}
               onValueChange={(value) => handleInputChange('contactMethod', value)}
@@ -224,17 +226,17 @@ Preferred Contact: ${formData.contactMethod}`;
             >
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="email" id="email-contact" />
-                <Label htmlFor="email-contact">Email</Label>
+                <Label htmlFor="email-contact">{t('emailOption')}</Label>
               </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="phone" id="phone-contact" />
-                <Label htmlFor="phone-contact">Phone</Label>
+                <Label htmlFor="phone-contact">{t('phoneOption')}</Label>
               </div>
             </RadioGroup>
           </div>
 
           <Button type="submit" className="w-full bg-blue-900 text-white hover:bg-blue-800 text-lg">
-            Send via WhatsApp <Send className="ml-2 h-5 w-5" />
+            {t('submit')} <Send className="ml-2 h-5 w-5" />
           </Button>
         </form>
       </DialogContent>

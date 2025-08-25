@@ -109,7 +109,7 @@ const Hero = () => {
 
           {/* Animated Tagline */}
           <div className="text-xl sm:text-2xl md:text-3xl font-extrabold text-accent min-h-[5rem] sm:min-h-[2.5rem] flex items-center justify-center gap-x-2">
-            <span className="text-white">HIG</span>
+            <span className="text-white">{t('hig')}</span>
             <span className="text-accent">|</span>
             <div className="relative overflow-hidden">
                <span key={activeIndex} className="inline-block animate-calm-slide-up">

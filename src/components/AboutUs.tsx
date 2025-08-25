@@ -63,10 +63,10 @@ const AboutUs = () => {
   ];
 
   const stats = [
-    { icon: TrendingUp, number: "₹20+ Cr", label: t('Annual Revenue') },
-    { icon: Users, number: "100+", label: t('Employees') },
-    { icon: Award, number: "20+", label: t('Industry Awards') },
-    { icon: Target, number: "12+", label: t('Business Sectors') }
+    { icon: TrendingUp, number: "₹20+ Cr", label: t('annualRevenue') },
+    { icon: Users, number: "100+", label: t('employees') },
+    { icon: Award, number: "20+", label: t('industryAwards') },
+    { icon: Target, number: "12+", label: t('businessSectors') }
   ];
 
   const openImageModal = (imageSrc) => setSelectedImage(imageSrc);
@@ -77,10 +77,10 @@ const AboutUs = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-extrabold mb-4 text-gray-900 leading-tight">
-            {t('About Heritage India Group')}
+            {t('aboutTitle')}
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            {t('शक्ति, प्रगति, विजय')}
+            {t('aboutSubtitle')}
           </p>
         </div>
 
@@ -153,10 +153,9 @@ const AboutUs = () => {
           <Card className="p-8 border-0 shadow-lg bg-gradient-to-br from-blue-900 to-blue-700 text-white">
             <CardContent className="space-y-4">
               <Target className="h-12 w-12 text-yellow-400 mb-4" />
-              <h3 className="text-2xl font-bold">{t('Our Vision')}</h3>
+              <h3 className="text-2xl font-bold">{t('ourVision')}</h3>
               <p className="leading-relaxed text-blue-100">
-                {/* {t('visionText')} */}
-                {t("To be India's most respected and trusted business conglomerate, creating sustainable value and contributing to the nation's progress.")}
+                {t('visionText')}
 
               </p>
             </CardContent>
@@ -167,14 +166,14 @@ const AboutUs = () => {
               <Award className="h-12 w-12 text-white mb-4" />
               <h3 className="text-2xl font-bold">{t('ourMission')}</h3>
               <p className="leading-relaxed">
-                {t('Deliver excellence across sectors by fostering innovation, maintaining high standards, and building lasting relationships with stakeholders.')}
+                {t('missionText')}
               </p>
             </CardContent>
           </Card>
         </div>
 
         <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold text-blue-900 mb-8">{t('Our Founders')}</h3>
+          <h3 className="text-3xl font-bold text-blue-900 mb-8">{t('ourFounders')}</h3>
           <div className="grid md:grid-cols-2 gap-6 justify-center">
             {values.map((founder, index) => (
               <Card key={index} className="p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-white">
@@ -203,7 +202,7 @@ const AboutUs = () => {
         </div>
 
         <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold text-blue-900 mb-8">{t('Senior Management')}</h3>
+          <h3 className="text-3xl font-bold text-blue-900 mb-8">{t('seniorManagement')}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {management.map((member, index) => (
               <Card key={index} className="p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-white">
