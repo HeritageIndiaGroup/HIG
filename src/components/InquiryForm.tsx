@@ -94,11 +94,11 @@ Preferred Contact: ${formData.contactMethod}`;
         <div className="text-center mb-16">
           <MessageSquare className="h-16 w-16 text-blue-900 mx-auto mb-4" />
           <h2 className="text-5xl font-extrabold mb-5 text-gray-900 leading-tight">
-            {t('inquiryTitle')} 😊
+            {t('Get in Touch via inqury')} 😊
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {t('inquirySubtitle')}
+            {t("Have questions or want to learn more about our services? We'd love to hear from you.")}
           </p>
         </div>
 

@@ -1,5 +1,3 @@
-// src/components/CompaniesShowcase.jsx
-
 import {
   Card,
   CardContent,
@@ -64,10 +62,10 @@ const CompaniesShowcase = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-16">
           <h2 id="companies-heading" className="text-5xl font-extrabold mb-5 text-foreground leading-tight">
-            {t('companiesTitle')}
+            {t('Our Businesses')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto font-light">
-            {t('companiesSubtitle')}
+            {t("Explore the vast network of Heritage India Group companies, each a beacon of innovation and a driving force in India's journey towards growth and prosperity.")}
           </p>
         </header>
 
