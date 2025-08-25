@@ -10,9 +10,17 @@ const Footer = () => {
   };
 
   const companyLinks = [
-    "Heritage Construction", "Heritage Manufacturing", "Heritage Logistics", "Heritage Healthcare",
-    "Heritage Real Estate", "Heritage Energy", "Heritage Agriculture", "Heritage Retail",
-    "Heritage Education", "Heritage Travel", "Heritage Foods", "Heritage Security"
+    "HIG - HERITAGE INDIA AGRO PRODUCER COMPANY LIMITED",
+    "HIG - HERITAGE INDIA MICRO SERVICES FOUNDATION",
+    "HIG – HERITAGE MEDIA AND EDUCATION PRIVATE LIMITED",
+    "HIG - HERITAGE INDIA HOTEL & RESORT PRIVATE LIMITED",
+    "HIG - HERITAGE INDIA INFRA VENTURE PRIVATE LIMITED",
+    "HIG - HERITAGE INDIA FILM PRODUCTION PRIVATE LIMITED",
+    "HIG - Kashi Kedarnath",
+    "HIG - Finance",
+    "HIG - Mart",
+    "HIG - Dasandas Traders",
+    "HIG - Glam Factory"
   ];
 
   const quickLinks = [
@@ -24,6 +32,11 @@ const Footer = () => {
     { name: t('contact'), href: "#contact" }
   ];
 
+  const handleCompanyClick = (e) => {
+    e.preventDefault();
+    alert('Under development');
+  };
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 sm:px-6 py-16">
@@ -32,12 +45,14 @@ const Footer = () => {
           <div className="space-y-6">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">H</span>
-                </div>
+                <img 
+                  src="/logo.png" 
+                  alt="Heritage India Group Logo" 
+                  className="w-10 h-10 rounded-lg object-contain" 
+                />
                 <div>
                   <h3 className="text-xl font-bold">{t('heritageIndiaGroup')}</h3>
-                  <p className="text-sm text-gray-400">{t('buildingTomorrowsLegacy')}</p>
+                  <p className="text-sm text-gray-400">{t('शक्ति, प्रगति, विजय')}</p>
                 </div>
               </div>
               <p className="text-gray-300 leading-relaxed text-sm">
@@ -67,10 +82,9 @@ const Footer = () => {
               {companyLinks.slice(0, 6).map((company, index) => (
                 <a
                   key={index}
-                  href={`https://${company.toLowerCase().replace(/\s+/g, '-')}.com`}
+                  href="#"
+                  onClick={handleCompanyClick}
                   className="text-gray-300 hover:text-white transition-colors text-sm"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   {company}
                 </a>
@@ -85,10 +99,9 @@ const Footer = () => {
               {companyLinks.slice(6).map((company, index) => (
                 <a
                   key={index}
-                  href={`https://${company.toLowerCase().replace(/\s+/g, '-')}.com`}
+                  href="#"
+                  onClick={handleCompanyClick}
                   className="text-gray-300 hover:text-white transition-colors text-sm"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   {company}
                 </a>
@@ -115,7 +128,7 @@ const Footer = () => {
               <h5 className="text-sm font-semibold text-gray-400 mb-2">{t('contactInfo')}</h5>
               <div className="text-sm text-gray-300 space-y-1">
                 <p>{t('heritageIndiaGroup')}</p>
-                <p>Tea estate, near Durga temple,Banjarawala chowk, dehradun 248001,Uttarakhand, India</p>
+                <p>Tea estate, near Durga temple,Banjarawala chowk, dehradun 248001,Uttarakhand, India</p>
                 <p>Phone: +91 8418878887</p>
                 <p>Email: admin@heritageindiagroup.com</p>
               </div>
