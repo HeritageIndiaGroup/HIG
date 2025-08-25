@@ -89,27 +89,27 @@ const AboutUs = () => {
             <h3 className="text-3xl font-bold text-blue-900">{t('ourStory')}</h3>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                Founded in 2020, Heritage India Group has grown into a diversified business conglomerate with 12 companies under its umbrella. Headquartered in Varanasi, Uttar Pradesh, the Group operates across agriculture, hospitality, restaurants, entertainment, and production, creating value for communities and opportunities for growth.
+                {t('storyParagraph1')}
               </p>
               <p>
-                In just a few years, we have built a reputation for trust, quality, and innovation. From running successful restaurants and hospitality ventures to expanding into agro-producer companies and media production, our journey reflects the belief that India’s heritage and modern business excellence can go hand in hand.
+                {t('storyParagraph2')}
               </p>
               <p>
-                Heritage India Group is more than just a collection of companies — it is a family of people, ideas, and values. With every business we create, every project we deliver, and every relationship we nurture, our goal is to contribute to the progress of society while honoring our cultural roots.
+                {t('storyParagraph3')}
               </p>
               
               {isExpanded && (
                 <div className="space-y-4">
-                  <h4 className="text-xl font-semibold text-gray-800 pt-2">Our Presence</h4>
+                  <h4 className="text-xl font-semibold text-gray-800 pt-2">{t('ourPresence')}</h4>
                   <ul className="list-disc list-inside space-y-1">
-                    <li>12 companies under the group across diverse industries.</li>
-                    <li>2500 sq. ft. restaurant space as part of our hospitality venture.</li>
-                    <li>Expanding rapidly in entertainment, agro, and lifestyle sectors.</li>
+                    <li>{t('presenceText1')}</li>
+                    <li>{t('presenceText2')}</li>
+                    <li>{t('presenceText3')}</li>
                   </ul>
                   
-                  <h4 className="text-xl font-semibold text-gray-800 pt-2">Our Core Belief</h4>
+                  <h4 className="text-xl font-semibold text-gray-800 pt-2">{t('ourCoreBeliefs')}</h4>
                   <p>
-                    To preserve the legacy of India’s heritage while building a future that inspires trust, growth, and excellence.
+                    {t('coreBeliefText')}
                   </p>
                 </div>
               )}
@@ -156,7 +156,6 @@ const AboutUs = () => {
               <h3 className="text-2xl font-bold">{t('ourVision')}</h3>
               <p className="leading-relaxed text-blue-100">
                 {t('visionText')}
-
               </p>
             </CardContent>
           </Card>
