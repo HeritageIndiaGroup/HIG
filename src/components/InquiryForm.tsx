@@ -53,7 +53,7 @@ const InquiryForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const whatsappNumber = "+917081957371";
+    const whatsappNumber = "+918418878887";
     const message = `New Inquiry from Heritage India Group Website:
 
 Name: ${formData.name}
