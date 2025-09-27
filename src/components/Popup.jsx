@@ -76,7 +76,7 @@ const Popup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const whatsappNumber = "+917081957371";
+    const whatsappNumber = "+918418878887";
     const message = `New Inquiry from Heritage India Group Website:
 
 Name: ${formData.name}
