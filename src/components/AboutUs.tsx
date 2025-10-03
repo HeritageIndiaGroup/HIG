@@ -64,7 +64,7 @@ const AboutUs = () => {
 
   const stats = [
     { icon: TrendingUp, number: "₹20+ Cr", label: t('annualRevenue') },
-    { icon: Users, number: "100+", label: t('employees') },
+    { icon: Users, number: "1000+", label: t('employees') },
     { icon: Award, number: "20+", label: t('industryAwards') },
     { icon: Target, number: "12+", label: t('businessSectors') }
   ];

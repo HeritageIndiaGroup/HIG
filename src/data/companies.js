@@ -82,7 +82,7 @@ export const companies = [
     description:
       "Bringing captivating stories to life through high-quality film production and entertainment industry services.",
     image: media2,
-    website: "https://heritage-films.com",
+    website: "https://www.higproductionhouse.com/",
     category: "Entertainment",
   },
   {
